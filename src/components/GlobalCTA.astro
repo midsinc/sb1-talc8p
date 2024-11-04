@@ -1,0 +1,18 @@
+---
+const { class: className } = Astro.props;
+---
+
+<section class:list={["bg-gray-900 text-white py-20", className]}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your IT Infrastructure?</h2>
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+      Partner with RackBunker for comprehensive IT solutions that drive your business forward.
+    </p>
+    <a
+      href="/contact#contact-form"
+      class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+    >
+      Get Started Today
+    </a>
+  </div>
+</section>

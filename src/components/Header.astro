@@ -1,0 +1,210 @@
+---
+import { useState } from 'react';
+
+const services = [
+  { name: "Managed Infrastructure", href: "/services/infrastructure" },
+  { name: "Managed Cloud", href: "/services/cloud" },
+  { name: "Managed Security", href: "/services/security" },
+  { name: "Managed Governance", href: "/services/governance" },
+  { name: "Managed Hosting", href: "/services/hosting" }
+];
+
+const aboutItems = [
+  { name: "About Us", href: "/about" },
+  { name: "Why RackBunker", href: "/why-rackbunker" }
+];
+---
+
+<header class="bg-gray-900 shadow-sm fixed w-full z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center">
+          <img src="http://rackbunker.com/wp-content/uploads/2020/01/rackbunker_logo.tmblue-300x59.png" alt="RackBunker" class="h-8">
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <!-- Services Dropdown -->
+        <div class="relative group">
+          <button class="text-white hover:text-blue-400 inline-flex items-center">
+            Services
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+            <div class="relative">
+              <div class="absolute -top-2 left-0 w-full h-2"></div>
+              <div class="relative bg-white border rounded-lg shadow-lg py-2">
+                {services.map(service => (
+                  <a
+                    href={service.href}
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  >
+                    {service.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Dropdown -->
+        <div class="relative group">
+          <button class="text-white hover:text-blue-400 inline-flex items-center">
+            About
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+            <div class="relative">
+              <div class="absolute -top-2 left-0 w-full h-2"></div>
+              <div class="relative bg-white border rounded-lg shadow-lg py-2">
+                {aboutItems.map(item => (
+                  <a
+                    href={item.href}
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="/blog" class="text-white hover:text-blue-400">Blog</a>
+        <a href="/partners" class="text-white hover:text-blue-400">Partners</a>
+        <a href="/contact" class="text-white hover:text-blue-400">Contact Us</a>
+        <a 
+          href="/portal" 
+          class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Customer Portal
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button
+          type="button"
+          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-400 focus:outline-none"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <!-- Services Section -->
+        <div class="mobile-dropdown">
+          <button class="w-full text-left text-white hover:text-blue-400 px-3 py-2 text-base font-medium flex justify-between items-center">
+            Services
+            <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden pl-4 space-y-1">
+            {services.map(service => (
+              <a
+                href={service.href}
+                class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
+              >
+                {service.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="mobile-dropdown">
+          <button class="w-full text-left text-white hover:text-blue-400 px-3 py-2 text-base font-medium flex justify-between items-center">
+            About
+            <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden pl-4 space-y-1">
+            {aboutItems.map(item => (
+              <a
+                href={item.href}
+                class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <a href="/blog" class="block px-3 py-2 text-base font-medium text-white hover:text-blue-400">Blog</a>
+        <a href="/partners" class="block px-3 py-2 text-base font-medium text-white hover:text-blue-400">Partners</a>
+        <a href="/contact" class="block px-3 py-2 text-base font-medium text-white hover:text-blue-400">Contact Us</a>
+        <a href="/portal" class="block px-3 py-2 text-base font-medium text-white hover:text-blue-400 bg-blue-600 rounded-md">Customer Portal</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Mobile dropdowns
+  const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+
+  mobileDropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('button');
+    const content = dropdown.querySelector('div');
+    const arrow = button?.querySelector('svg');
+
+    button?.addEventListener('click', () => {
+      content?.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
+    });
+  });
+</script>
+
+<style>
+  /* Smooth transitions for mobile menu */
+  #mobile-menu {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mobile-dropdown div {
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Ensure menu is scrollable on small screens */
+  #mobile-menu {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+</style>

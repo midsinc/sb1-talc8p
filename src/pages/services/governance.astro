@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const capabilities = [
+  {
+    title: "Policy Management",
+    description: "Comprehensive policy development and implementation",
+    icon: "📋"
+  },
+  {
+    title: "Compliance Monitoring",
+    description: "Continuous compliance monitoring and reporting",
+    icon: "✅"
+  },
+  {
+    title: "Risk Management",
+    description: "Proactive risk assessment and mitigation strategies",
+    icon: "⚠️"
+  },
+  {
+    title: "Audit Support",
+    description: "Complete audit preparation and management",
+    icon: "📊"
+  }
+];
+---
+
+<Layout title="Managed Governance">
+  <ServiceLayout
+    title="Managed Governance"
+    description="Ensure compliance and maintain best practices across your IT infrastructure."
+    heroImage="/images/governance-hero.jpg"
+    capabilities={capabilities}
+  >
+    <p class="lead">
+      Our managed governance services help organizations maintain compliance, manage risk, and implement best practices across their IT infrastructure.
+    </p>
+
+    <h2>Governance Excellence</h2>
+    <p>
+      We provide comprehensive governance solutions that help you maintain control over your IT environment while ensuring compliance with industry regulations and standards.
+    </p>
+
+    <h2>Key Benefits</h2>
+    <ul>
+      <li>Streamlined compliance management</li>
+      <li>Reduced regulatory risks</li>
+      <li>Improved operational efficiency</li>
+      <li>Enhanced decision-making processes</li>
+    </ul>
+  </ServiceLayout>
+</Layout>

@@ -1,0 +1,40 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <img src="http://rackbunker.com/wp-content/uploads/2020/01/rackbunker_logo.tmblue-300x59.png" alt="RackBunker" class="h-8 mb-4">
+        <p class="mt-4">Your trusted partner in IT management and security</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="/services/infrastructure" class="hover:text-blue-400">Managed Infrastructure</a></li>
+          <li><a href="/services/cloud" class="hover:text-blue-400">Managed Cloud</a></li>
+          <li><a href="/services/security" class="hover:text-blue-400">Managed Security</a></li>
+          <li><a href="/services/governance" class="hover:text-blue-400">Managed Governance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="/about" class="hover:text-blue-400">About Us</a></li>
+          <li><a href="/contact" class="hover:text-blue-400">Contact</a></li>
+          <li><a href="/portal" class="hover:text-blue-400">Customer Portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2">
+          <li>contact@rackbunker.com</li>
+          <li>1-800-SECURE-IT</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+      <p>&copy; {currentYear} RackBunker. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

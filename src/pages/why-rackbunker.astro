@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pillars = [
+  {
+    title: "Reliability",
+    description: "Our enterprise-grade infrastructure and 24/7 monitoring ensure maximum uptime and performance for your critical systems.",
+    icon: "⚡"
+  },
+  {
+    title: "Security",
+    description: "Military-grade security measures protect your data across both physical infrastructure and digital assets.",
+    icon: "🛡️"
+  },
+  {
+    title: "Flexibility",
+    description: "Customizable solutions that adapt to your business needs, from infrastructure to managed services.",
+    icon: "🔄"
+  }
+];
+
+const benefits = [
+  {
+    title: "Integrated Solutions",
+    description: "As both a data center provider and MSP, we offer seamless integration between infrastructure and services."
+  },
+  {
+    title: "Consultative Approach",
+    description: "We take time to understand your business needs and design solutions that align with your goals."
+  },
+  {
+    title: "Single Point of Contact",
+    description: "One team handles everything from rack space to managed services, simplifying your IT management."
+  },
+  {
+    title: "End-to-End Security",
+    description: "Complete security coverage from physical data center access to cyber threat protection."
+  }
+];
+---
+
+<Layout title="Why Choose RackBunker">
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Why Choose RackBunker?</h1>
+          <p class="text-xl text-blue-100">
+            The unique advantage of integrated data center services and managed IT solutions, delivered with a consultative approach.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Pillars -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Core Pillars</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {pillars.map(pillar => (
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-3xl">
+                {pillar.icon}
+              </div>
+              <h3 class="text-xl font-bold mb-4">{pillar.title}</h3>
+              <p class="text-gray-600">{pillar.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Unique Value Proposition -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">The RackBunker Advantage</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            We combine data center expertise with comprehensive managed services to deliver integrated solutions that drive business success.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {benefits.map(benefit => (
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-3">{benefit.title}</h3>
+              <p class="text-gray-600">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultative Approach -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Our Consultative Approach</h2>
+            <p class="text-lg text-gray-600 mb-6">
+              We believe in understanding your business first. Our team works closely with you to:
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">✓</span>
+                <span>Assess your current infrastructure and needs</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">✓</span>
+                <span>Design customized solutions that align with your goals</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">✓</span>
+                <span>Implement solutions with minimal disruption</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">✓</span>
+                <span>Provide ongoing optimization and support</span>
+              </li>
+            </ul>
+          </div>
+          <div class="relative">
+            <img 
+              src="/images/consultative-approach.jpg" 
+              alt="Consultative Approach" 
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

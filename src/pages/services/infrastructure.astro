@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const capabilities = [
+  {
+    title: "24/7 Monitoring",
+    description: "Round-the-clock infrastructure monitoring and proactive issue resolution",
+    icon: "🔍"
+  },
+  {
+    title: "Network Management",
+    description: "Comprehensive network design, optimization, and maintenance",
+    icon: "🌐"
+  },
+  {
+    title: "Server Administration",
+    description: "Expert server deployment, maintenance, and optimization",
+    icon: "🖥️"
+  },
+  {
+    title: "Disaster Recovery",
+    description: "Robust backup solutions and disaster recovery planning",
+    icon: "🔄"
+  }
+];
+---
+
+<Layout title="Managed Infrastructure">
+  <ServiceLayout
+    title="Managed Infrastructure"
+    description="Comprehensive infrastructure management solutions to keep your business running smoothly and efficiently."
+    heroImage="/images/infrastructure-hero.jpg"
+    capabilities={capabilities}
+  >
+    <p class="lead">
+      Our managed infrastructure services provide end-to-end solutions for your IT infrastructure needs. We handle everything from daily operations to strategic planning, ensuring your systems are always operating at peak performance.
+    </p>
+
+    <h2>Why Choose Our Infrastructure Management?</h2>
+    <ul>
+      <li>Reduced operational costs through efficient resource management</li>
+      <li>Improved system reliability and uptime</li>
+      <li>Scalable solutions that grow with your business</li>
+      <li>Proactive maintenance to prevent issues before they occur</li>
+    </ul>
+
+    <h2>Our Approach</h2>
+    <p>
+      We take a proactive approach to infrastructure management, combining industry best practices with cutting-edge monitoring tools. Our team of experts ensures your systems are not just running, but optimized for performance and security.
+    </p>
+  </ServiceLayout>
+</Layout>

@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: "Excellence",
+    description: "We strive for excellence in everything we do, from service delivery to customer support.",
+    icon: "🏆"
+  },
+  {
+    title: "Innovation",
+    description: "Continuously evolving our solutions to meet the changing needs of modern businesses.",
+    icon: "💡"
+  },
+  {
+    title: "Security",
+    description: "Unwavering commitment to protecting our clients' digital assets and infrastructure.",
+    icon: "🛡️"
+  },
+  {
+    title: "Partnership",
+    description: "Building lasting relationships through trust, transparency, and mutual success.",
+    icon: "🤝"
+  }
+];
+
+const certifications = [
+  "ISO 27001",
+  "SOC 2 Type II",
+  "HIPAA Compliance",
+  "PCI DSS"
+];
+
+const minorityCerts = [
+  {
+    name: "Minority Business Enterprise (MBE)",
+    description: "Certified by the National Minority Supplier Development Council"
+  },
+  {
+    name: "Small Disadvantaged Business (SDB)",
+    description: "Certified by the Small Business Administration"
+  },
+  {
+    name: "8(a) Business Development Program",
+    description: "Participant in the SBA's 8(a) program"
+  }
+];
+
+const timeline = [
+  {
+    year: "2010",
+    event: "RackBunker founded with first data center facility"
+  },
+  {
+    year: "2013",
+    event: "Launched managed services division"
+  },
+  {
+    year: "2015",
+    event: "Achieved ISO 27001 certification"
+  },
+  {
+    year: "2017",
+    event: "Opened second data center location"
+  },
+  {
+    year: "2019",
+    event: "Expanded managed security services"
+  },
+  {
+    year: "2022",
+    event: "Launched cloud services division"
+  }
+];
+---
+
+<Layout title="About Us">
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gray-900 text-white">
+      <div class="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Our Story
+          </h1>
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
+            Since 2010, RackBunker has been at the forefront of IT infrastructure and managed services, helping businesses navigate the complexities of modern technology.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            To empower businesses with secure, reliable, and innovative IT solutions that drive growth and success in the digital age. We strive to be more than a service provider – we aim to be a trusted partner in our clients' success.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minority Business Certifications -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Minority Business Certifications</h2>
+          <p class="text-xl text-gray-600">Proudly certified as a minority-owned business enterprise</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {minorityCerts.map(cert => (
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+              <h3 class="text-xl font-bold mb-4">{cert.name}</h3>
+              <p class="text-gray-600">{cert.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- History Timeline -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Journey</h2>
+        <div class="max-w-3xl mx-auto">
+          {timeline.map((item, index) => (
+            <div class="flex mb-8 last:mb-0">
+              <div class="w-24 flex-shrink-0">
+                <span class="font-bold text-blue-600">{item.year}</span>
+              </div>
+              <div class="flex-grow pl-8 border-l-2 border-gray-200">
+                <p class="text-lg">{item.event}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

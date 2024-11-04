@@ -1,0 +1,20 @@
+---
+interface Props {
+  type: 'infrastructure' | 'cloud' | 'security' | 'governance' | 'hosting';
+  class?: string;
+}
+
+const { type, class: className } = Astro.props;
+
+const icons = {
+  infrastructure: "🏢",
+  cloud: "☁️",
+  security: "🔒",
+  governance: "📋",
+  hosting: "🌐"
+};
+---
+
+<div class:list={["w-12 h-12 flex items-center justify-center", className]}>
+  <span class="text-3xl">{icons[type]}</span>
+</div>

@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const capabilities = [
+  {
+    title: "Cloud Migration",
+    description: "Seamless transition of your applications and data to the cloud",
+    icon: "☁️"
+  },
+  {
+    title: "Multi-Cloud Management",
+    description: "Unified management across AWS, Azure, and Google Cloud",
+    icon: "🔄"
+  },
+  {
+    title: "Cost Optimization",
+    description: "Continuous monitoring and optimization of cloud spending",
+    icon: "💰"
+  },
+  {
+    title: "Cloud Security",
+    description: "Advanced security measures for your cloud infrastructure",
+    icon: "🔒"
+  }
+];
+---
+
+<Layout title="Managed Cloud">
+  <ServiceLayout
+    title="Managed Cloud Services"
+    description="Expert cloud solutions across major platforms including AWS, Azure, and Google Cloud."
+    heroImage="/images/cloud-hero.jpg"
+    capabilities={capabilities}
+  >
+    <p class="lead">
+      Our managed cloud services help organizations leverage the full potential of cloud computing while maintaining security and controlling costs.
+    </p>
+
+    <h2>Cloud Excellence</h2>
+    <p>
+      We specialize in designing, implementing, and managing cloud solutions that drive business growth. Our expertise spans across major cloud platforms, ensuring you get the best solution for your specific needs.
+    </p>
+
+    <h2>Our Cloud Solutions</h2>
+    <ul>
+      <li>Strategic cloud adoption planning</li>
+      <li>Cloud infrastructure optimization</li>
+      <li>Hybrid and multi-cloud management</li>
+      <li>Cloud security and compliance</li>
+    </ul>
+  </ServiceLayout>
+</Layout>

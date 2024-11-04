@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const services = [
+  {
+    title: "Managed Infrastructure",
+    description: "Complete infrastructure management including networks, servers, and workstations.",
+    icon: "infrastructure",
+    href: "/services/infrastructure"
+  },
+  {
+    title: "Managed Cloud",
+    description: "Expert cloud solutions across AWS, Azure, and Google Cloud platforms.",
+    icon: "cloud",
+    href: "/services/cloud"
+  },
+  {
+    title: "Managed Security",
+    description: "Comprehensive security solutions including threat detection and response.",
+    icon: "security",
+    href: "/services/security"
+  },
+  {
+    title: "Managed Governance",
+    description: "Ensure compliance and maintain best practices across your IT infrastructure.",
+    icon: "governance",
+    href: "/services/governance"
+  }
+];
+---
+
+<Layout title="Professional IT Solutions">
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-[#004d99] to-[#0066cc] text-white">
+      <div class="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Enterprise IT Solutions for Modern Business
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-blue-100">
+            Comprehensive managed services to drive your digital transformation
+          </p>
+          <div class="flex gap-4">
+            <a href="/contact#contact-form" class="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+              Get Started
+            </a>
+            <a href="/why-rackbunker" class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Comprehensive IT solutions designed to help your business thrive in the digital age
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map(service => (
+            <ServiceCard {...service} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose RackBunker</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Industry-leading expertise combined with exceptional service
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <span class="text-2xl">🏆</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Enterprise Experience</h3>
+            <p class="text-gray-600">Decades of experience managing complex enterprise IT environments</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <span class="text-2xl">⚡</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">24/7 Support</h3>
+            <p class="text-gray-600">Round-the-clock monitoring and support for your critical systems</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <span class="text-2xl">🛡️</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Security First</h3>
+            <p class="text-gray-600">Advanced security measures to protect your business assets</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const partners = [
+  {
+    name: "Microsoft",
+    logo: "/images/partners/microsoft.svg",
+    description: "Gold Partner providing cloud solutions through Azure and Microsoft 365"
+  },
+  {
+    name: "Cisco",
+    logo: "/images/partners/cisco.svg",
+    description: "Premier Partner delivering enterprise networking and security solutions"
+  },
+  {
+    name: "VMware",
+    logo: "/images/partners/vmware.svg",
+    description: "Enterprise Partner for virtualization and cloud infrastructure"
+  },
+  {
+    name: "Dell EMC",
+    logo: "/images/partners/dell.svg",
+    description: "Titanium Partner providing enterprise storage and server solutions"
+  },
+  {
+    name: "AWS",
+    logo: "/images/partners/aws.svg",
+    description: "Advanced Consulting Partner for cloud infrastructure and services"
+  },
+  {
+    name: "Fortinet",
+    logo: "/images/partners/fortinet.svg",
+    description: "Platinum Partner delivering advanced cybersecurity solutions"
+  },
+  {
+    name: "Veeam",
+    logo: "/images/partners/veeam.svg",
+    description: "Platinum Partner for backup and disaster recovery solutions"
+  },
+  {
+    name: "Palo Alto",
+    logo: "/images/partners/paloalto.svg",
+    description: "NextWave Partner providing next-generation security solutions"
+  },
+  {
+    name: "NetApp",
+    logo: "/images/partners/netapp.svg",
+    description: "Star Partner for hybrid cloud data services and storage systems"
+  }
+];
+---
+
+<Layout title="Our Partners">
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Strategic Partners</h1>
+          <p class="text-xl text-blue-100">
+            We partner with industry leaders to deliver best-in-class solutions for our clients.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Grid -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {partners.map(partner => (
+            <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div class="h-20 flex items-center justify-center mb-6">
+                <img 
+                  src={partner.logo} 
+                  alt={`${partner.name} logo`}
+                  class="max-h-full max-w-[200px] object-contain"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-center mb-4">{partner.name}</h3>
+              <p class="text-gray-600 text-center">{partner.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Partnership Benefits -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6">Why Partner with RackBunker?</h2>
+          <p class="text-xl text-gray-600">
+            Our strategic partnerships enable us to deliver comprehensive, integrated solutions that leverage the best technologies in the industry. Through these partnerships, we provide our clients with:
+          </p>
+          <ul class="mt-8 space-y-4 text-left">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-3">✓</span>
+              <span>Access to latest technologies and solutions</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-3">✓</span>
+              <span>Certified expertise across multiple platforms</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-3">✓</span>
+              <span>Integrated support and service delivery</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-3">✓</span>
+              <span>Best-in-class security and reliability</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

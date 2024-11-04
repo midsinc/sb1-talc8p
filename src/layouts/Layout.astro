@@ -1,0 +1,47 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GlobalCTA from '../components/GlobalCTA.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Professional Managed Service Provider offering infrastructure, cloud, security, and governance solutions" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | RackBunker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white font-['Inter']">
+    <Header />
+    <div class="pt-16">
+      <slot />
+      <GlobalCTA />
+    </div>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary: #0066cc;
+    --primary-dark: #004d99;
+    --secondary: #00a0dc;
+    --accent: #ff6b00;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased;
+  }
+</style>

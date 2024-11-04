@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const capabilities = [
+  {
+    title: "Secure Website Hosting",
+    description: "Enterprise-grade hosting with advanced security measures",
+    icon: "🌐"
+  },
+  {
+    title: "Application Hosting",
+    description: "Reliable hosting for business-critical applications",
+    icon: "⚙️"
+  },
+  {
+    title: "Database Hosting",
+    description: "High-performance database hosting with redundancy",
+    icon: "💾"
+  },
+  {
+    title: "Managed Backups",
+    description: "Automated backup solutions with quick recovery",
+    icon: "🔄"
+  }
+];
+
+const features = [
+  "99.99% Uptime SLA",
+  "DDoS Protection",
+  "SSL/TLS Encryption",
+  "24/7 Monitoring",
+  "Automated Backups",
+  "Scalable Resources",
+  "Load Balancing",
+  "Content Delivery Network"
+];
+---
+
+<Layout title="Managed Hosting">
+  <ServiceLayout
+    title="Managed Hosting Solutions"
+    description="Secure, reliable, and scalable hosting solutions for websites, applications, and databases."
+    heroImage="/images/hosting-hero.jpg"
+    capabilities={capabilities}
+  >
+    <p class="lead">
+      Our managed hosting solutions provide the perfect blend of security, performance, and reliability for your digital assets.
+    </p>
+
+    <h2>Enterprise-Grade Hosting</h2>
+    <p>
+      Built on our state-of-the-art data center infrastructure, our hosting solutions ensure your applications and data are always available and performing optimally.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+      <div class="bg-gray-50 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold mb-4">Website Hosting</h3>
+        <ul class="space-y-2">
+          <li>Optimized for high-traffic websites</li>
+          <li>Advanced caching solutions</li>
+          <li>Global content delivery</li>
+          <li>Web application firewall</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold mb-4">Application Hosting</h3>
+        <ul class="space-y-2">
+          <li>Support for multiple frameworks</li>
+          <li>Containerized deployments</li>
+          <li>Auto-scaling capabilities</li>
+          <li>Application monitoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Database Hosting</h2>
+    <p>
+      Our database hosting solutions support all major database engines and provide:
+    </p>
+    <ul>
+      <li>High-availability configurations</li>
+      <li>Automated backups and point-in-time recovery</li>
+      <li>Performance monitoring and optimization</li>
+      <li>Database security best practices</li>
+    </ul>
+
+    <div class="bg-blue-50 p-6 rounded-lg mt-8">
+      <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {features.map(feature => (
+          <div class="flex items-center">
+            <span class="text-blue-600 mr-2">✓</span>
+            <span>{feature}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </ServiceLayout>
+</Layout>

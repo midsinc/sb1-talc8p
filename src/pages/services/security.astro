@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const capabilities = [
+  {
+    title: "Threat Detection",
+    description: "Advanced threat detection and response capabilities",
+    icon: "🛡️"
+  },
+  {
+    title: "Security Monitoring",
+    description: "24/7 security monitoring and incident response",
+    icon: "👁️"
+  },
+  {
+    title: "Vulnerability Management",
+    description: "Continuous vulnerability assessment and remediation",
+    icon: "🔍"
+  },
+  {
+    title: "Security Training",
+    description: "Comprehensive security awareness training programs",
+    icon: "📚"
+  }
+];
+---
+
+<Layout title="Managed Security">
+  <ServiceLayout
+    title="Managed Security"
+    description="Comprehensive security solutions to protect your business from evolving cyber threats."
+    heroImage="/images/security-hero.jpg"
+    capabilities={capabilities}
+  >
+    <p class="lead">
+      Our managed security services provide comprehensive protection against modern cyber threats, ensuring your business stays secure in an ever-evolving threat landscape.
+    </p>
+
+    <h2>Comprehensive Security</h2>
+    <p>
+      We deliver end-to-end security solutions that protect your business at every level. From threat detection to incident response, our team ensures your systems are protected 24/7.
+    </p>
+
+    <h2>Security Features</h2>
+    <ul>
+      <li>Real-time threat monitoring and response</li>
+      <li>Advanced endpoint protection</li>
+      <li>Security compliance management</li>
+      <li>Regular security assessments</li>
+    </ul>
+  </ServiceLayout>
+</Layout>

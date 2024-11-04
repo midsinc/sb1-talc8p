@@ -1,0 +1,21 @@
+---
+import ServiceIcon from './ServiceIcon.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  icon: 'infrastructure' | 'cloud' | 'security' | 'governance';
+  href: string;
+}
+
+const { title, description, icon, href } = Astro.props;
+---
+
+<a href={href} class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow group">
+  <ServiceIcon 
+    type={icon} 
+    class="mb-4 bg-[#0066cc]/10 p-2 rounded-lg group-hover:bg-[#0066cc]/20 transition-colors"
+  />
+  <h3 class="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+  <p class="text-gray-600">{description}</p>
+</a>

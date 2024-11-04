@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogAuthor from '../../components/blog/BlogAuthor.astro';
+import { formatDate } from '../../utils/date';
+
+export async function getStaticPaths() {
+  const response = await fetch('https://api.rackbunker.com/blog/posts');
+  const posts = await response.json();
+  
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={post.title}>
+  <main>
+    <!-- Hero Section with Background Image -->
+    <section 
+      class="relative h-[60vh] bg-cover bg-center"
+      style={`background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${post.image})`}
+    >
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            {post.title}
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Content -->
+    <article class="py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose lg:prose-lg mx-auto">
+          {post.content}
+        </div>
+
+        <!-- Author and Date -->
+        <div class="mt-16 pt-8 border-t">
+          <BlogAuthor 
+            name={post.author}
+            date={formatDate(post.date)}
+          />
+          
+          <div class="mt-8">
+            <a 
+              href="/blog" 
+              class="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              ← Back to Blog
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
